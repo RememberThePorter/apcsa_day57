@@ -5,25 +5,12 @@ import java.util.ArrayList;
 
 public class Deck {
     private List<Card> cards;
-
-    /**
-     * size is the number of not-yet-dealt cards.
-     * Cards are dealt from the top (highest index) down.
-     * The next card to be dealt is at size - 1.
-     */
     private int size;
 
-
-    /**
-     * Creates a new <code>Deck</code> instance.<BR>
-     * It pairs each element of ranks with each element of suits,
-     * and produces one of the corresponding card.
-     * @param ranks is an array containing all of the card ranks.
-     * @param suits is an array containing all of the card suits.
-     * @param values is an array containing all of the card point values.
-     */
     public Deck(String[] ranks, String[] suits, int[] values) {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        for(int i = 0; i < ranks.length; i++) {
+            cards.add(new Card(ranks[i], suits[i], values[i]));
+        }
     }
 
 
@@ -32,7 +19,7 @@ public class Deck {
      * @return true if this deck is empty, false otherwise.
      */
     public boolean isEmpty() {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        return cards.isEmpty();
     }
 
     /**
