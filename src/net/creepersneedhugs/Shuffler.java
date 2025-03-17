@@ -1,5 +1,7 @@
 package net.creepersneedhugs;
 
+import java.util.Random;
+
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -47,7 +49,19 @@ public class Shuffler {
      * @param values is an array of integers simulating cards to be shuffled.
      */
     public static void perfectShuffle(int[] values) {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+        int[] shuffled = new int[values.length];
+        int k = 0;
+        for(int j = 0; j < values.length / 2; j++) {
+            shuffled[k] = values[j];
+            k += 2;
+        }
+        k = 1;
+        for(int j = values.length / 2 + 1; j < values.length; j++) {
+            shuffled[k] = values[j];
+            k += 2;
+        }
+
+        values = shuffled;
     }
 
     /**
@@ -62,6 +76,14 @@ public class Shuffler {
      * @param values is an array of integers simulating cards to be shuffled.
      */
     public static void selectionShuffle(int[] values) {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+        int shuffled[] = new int[values.length];
+        for(int k = values.length - 1; k > 0; k--) {
+            Random random = new Random();
+            int r = random.nextInt(0, k + 1);
+            shuffled[r] = k;
+            shuffled[k] = r;
+        }
+
+        values = shuffled;
     }
 }
