@@ -45,10 +45,14 @@ public class Deck {
      *         previously dealt.
      */
     public Card deal() {
-        Card card = cards.get(size - 1);
-        size -= 1;
+        if(!isEmpty()) {
+            Card card = cards.get(size - 1);
+            size -= 1;
 
-        return card;
+            return card;
+        } else {
+            return null;
+        }
     }
 
     /**
