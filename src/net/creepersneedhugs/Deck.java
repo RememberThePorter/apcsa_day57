@@ -11,6 +11,7 @@ public class Deck {
         for(int i = 0; i < ranks.length; i++) {
             cards.add(new Card(ranks[i], suits[i], values[i]));
         }
+        this.size = size();
     }
 
 
@@ -27,7 +28,7 @@ public class Deck {
      * @return the number of undealt cards in this deck.
      */
     public int size() {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        return cards.size();
     }
 
     /**
@@ -44,7 +45,10 @@ public class Deck {
      *         previously dealt.
      */
     public Card deal() {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        Card card = cards.get(size - 1);
+        size -= 1;
+
+        return card;
     }
 
     /**
