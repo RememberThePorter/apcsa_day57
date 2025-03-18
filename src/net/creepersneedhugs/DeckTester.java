@@ -1,22 +1,50 @@
 package net.creepersneedhugs;
 
-import java.util.List;
-
 public class DeckTester {
     public static void main(String[] args) {
-        String[] ranks1 = {"A", "2", "3"};
-        String[] suits1 = {"Spades", "Hearts", "Diamonds"};
-        int[] pointValues1 = {1, 2, 3};
-        Deck deck1 = new Deck(ranks1, suits1, pointValues1);
+        String[] ranks = {"jack", "queen", "king"};
+        String[] suits = {"blue", "red"};
+        int[] pointValues = {11, 12, 13};
+        Deck d = new Deck(ranks, suits, pointValues);
 
-        String[] ranks2 = {"4", "5", "6"};
-        String[] suits2 = {"Hearts", "Diamonds", "Clubs"};
-        int[] pointValues2 = {4, 5, 6};
-        Deck deck2 = new Deck(ranks2, suits2, pointValues2);
+        System.out.println("**** Original Deck Methods ****");
+        System.out.println("  toString:\n" + d.toString());
+        System.out.println("  isEmpty: " + d.isEmpty());
+        System.out.println("  size: " + d.size());
+        System.out.println();
+        System.out.println();
 
-        String[] ranks3 = {"7", "8", "9"};
-        String[] suits3 = {"Diamonds", "Clubs", "Spades"};
-        int[] pointValues3 = {7, 8, 9};
-        Deck deck3 = new Deck(ranks3, suits3, pointValues3);
+        System.out.println("**** Deal a Card ****");
+        System.out.println("  deal: " + d.deal());
+        System.out.println();
+        System.out.println();
+
+        System.out.println("**** Deck Methods After 1 Card Dealt ****");
+        System.out.println("  toString:\n" + d.toString());
+        System.out.println("  isEmpty: " + d.isEmpty());
+        System.out.println("  size: " + d.size());
+        System.out.println();
+        System.out.println();
+
+        System.out.println("**** Deal Remaining 5 Cards ****");
+        for(int i = 0; i < 5; i++) {
+            System.out.println("  deal: " + d.deal());
+        }
+        System.out.println();
+        System.out.println();
+
+        System.out.println("**** Deck Methods After All Cards Dealt ****");
+        System.out.println("  toString:\n" + d.toString());
+        System.out.println("  isEmpty: " + d.isEmpty());
+        System.out.println("  size: " + d.size());
+        System.out.println();
+        System.out.println();
+
+        System.out.println("**** Deal a Card From Empty Deck ****");
+        System.out.println("  deal: " + d.deal());
+        System.out.println();
+        System.out.println();
+
+        /* *** TO BE COMPLETED IN ACTIVITY 4 *** */
     }
 }

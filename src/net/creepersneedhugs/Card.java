@@ -6,30 +6,32 @@ public class Card {
     private int pointValue;
 
     public Card(String cardRank, String cardSuit, int cardPointValue) {
-        this.suit = cardSuit;
-        this.rank = cardRank;
-        this.pointValue = cardPointValue;
+        rank = cardRank;
+        suit = cardSuit;
+        pointValue = cardPointValue;
     }
 
     public String suit() {
-        return this.suit;
+        return suit;
     }
 
     public String rank() {
-        return this.rank;
+        return rank;
     }
 
     public int pointValue() {
-        return this.pointValue;
+        return pointValue();
     }
 
     public boolean matches(Card otherCard) {
-        return this.suit.equals(otherCard.suit) && this.rank.equals(otherCard.rank);
+        return otherCard.suit().equals(this.suit())
+                && otherCard.rank().equals(this.rank())
+                && otherCard.pointValue() == this.pointValue();
     }
 
     @Override
     public String toString() {
-        return this.rank + " of " + this.suit + " (point value = " + this.pointValue + ")";
+        return rank + " of " + suit + " (point value = " + pointValue + ")";
     }
 }
 
