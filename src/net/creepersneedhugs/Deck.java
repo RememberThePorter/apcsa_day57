@@ -2,6 +2,7 @@ package net.creepersneedhugs;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Deck {
     private List<Card> cards;
@@ -40,7 +41,16 @@ public class Deck {
      * and reset the size to represent the entire deck.
      */
     public void shuffle() {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+        List<Card> shuffled = new ArrayList<Card>();
+        for(int k = cards.size() - 1; k > 0; k--) {
+            Random random = new Random();
+            int r = random.nextInt(0, k + 1);
+            shuffled.add(r, cards.get(k));
+            shuffled.add(k, cards.get(r));
+        }
+
+        cards = shuffled;
+        size = cards.size();
     }
 
     /**
