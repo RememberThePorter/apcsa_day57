@@ -42,11 +42,14 @@ public class Deck {
      */
     public void shuffle() {
         List<Card> shuffled = new ArrayList<Card>();
+        for(int i = 0; i < cards.size(); i++) {
+            shuffled.add(null);
+        }
         for(int k = cards.size() - 1; k > 0; k--) {
             Random random = new Random();
             int r = random.nextInt(0, k + 1);
-            shuffled.add(r, cards.get(k));
-            shuffled.add(k, cards.get(r));
+            shuffled.set(r, cards.get(k));
+            shuffled.set(k, cards.get(r));
         }
 
         cards = shuffled;
