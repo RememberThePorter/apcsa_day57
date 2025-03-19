@@ -47,7 +47,7 @@ public class Deck {
         }
         for(int k = cards.size() - 1; k > 0; k--) {
             Random random = new Random();
-            int r = random.nextInt(0, k + 1);
+            int r = random.nextInt(0, k + 1); // The + 1 makes it inclusive of k
             shuffled.set(r, cards.get(k));
             shuffled.set(k, cards.get(r));
         }
